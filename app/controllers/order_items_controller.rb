@@ -11,6 +11,8 @@ class OrderItemsController < ApplicationController
 
     def show
 
+        render "show"
+
     end
 
     def new
@@ -32,6 +34,16 @@ class OrderItemsController < ApplicationController
 
     def destroy
 
+    end
+
+    def welcome 
+
+        render "welcome"
+
+    end
+  
+    def about
+  
     end
 
     private 

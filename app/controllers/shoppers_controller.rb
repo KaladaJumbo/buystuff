@@ -11,6 +11,8 @@ class ShoppersController < ApplicationController
 
     def show
 
+        render "show"
+
     end
 
     def new

@@ -1,0 +1,9 @@
+<h1>Customer Index</h1>
+<br>
+<br>
+<%@customers.each do |customer|%>
+    <%=link_to(customer.name, customer_path(customer))%>
+    <br>
+    <br>
+<%end%>
+

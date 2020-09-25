@@ -12,6 +12,8 @@ class OrdersController < ApplicationController
 
     def show
 
+        "show"
+
     end
 
     def new

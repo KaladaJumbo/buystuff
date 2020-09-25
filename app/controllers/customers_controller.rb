@@ -4,12 +4,14 @@ class CustomersController < ApplicationController
 
     def index
 
-        @customers = Customer.new
+        @customers = Customer.all
         render "index"
 
     end
 
     def show
+
+        render "show"
 
     end
 

@@ -11,6 +11,8 @@ class ItemsController < ApplicationController
 
     def show
 
+        render "show"
+
     end
 
     def new
@@ -22,7 +24,6 @@ class ItemsController < ApplicationController
     end
 
     def edit
-
 
     end
 

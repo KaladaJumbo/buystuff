@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
     belongs_to :customer
-    belomgs_to :shopper
+    belongs_to :shopper
     has_many :order_items
     has_many :items, through: :order_items
 end
