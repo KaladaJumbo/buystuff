@@ -1,5 +1,7 @@
 class OrderItemsController < ApplicationController
 
+    before_action :define_variable, only: [:show, :edit, :update, :destroy]
+
     def index
 
     end
@@ -34,6 +36,12 @@ class OrderItemsController < ApplicationController
     def strong_params(*args)
 
         params.require().permit(*args)
+
+    end
+
+    def define_variable
+
+        @order_item = OrderItem.find(params[:id])
 
     end
 

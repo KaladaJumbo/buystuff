@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
 
+    before_action :define_variable, only: [:show, :edit, :update, :destroy]
+
     def index
 
     end
@@ -34,6 +36,12 @@ class CustomersController < ApplicationController
     def strong_params(*args)
 
         params.require().permit(*args)
+
+    end
+
+    def define_variable
+
+        @customer = Customer.find(params[:id])
 
     end
 

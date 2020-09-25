@@ -1,5 +1,7 @@
 class ShoppersController < ApplicationController
 
+    before_action :define_variable, only: [:show, :edit, :update, :destroy]
+
     def index
 
     end
@@ -18,7 +20,6 @@ class ShoppersController < ApplicationController
 
     def edit
 
-
     end
 
     def update
@@ -34,6 +35,12 @@ class ShoppersController < ApplicationController
     def strong_params(*args)
 
         params.require().permit(*args)
+
+    end
+
+    def define_variable
+
+        @shopper = Shopper.find(params[:id])
 
     end
 
