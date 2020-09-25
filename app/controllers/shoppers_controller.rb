@@ -4,6 +4,9 @@ class ShoppersController < ApplicationController
 
     def index
 
+        @shoppers = Shopper.all
+        render "index"
+
     end
 
     def show
@@ -43,6 +46,5 @@ class ShoppersController < ApplicationController
         @shopper = Shopper.find(params[:id])
 
     end
-
 
 end

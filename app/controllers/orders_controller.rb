@@ -5,6 +5,9 @@ class OrdersController < ApplicationController
 
     def index
 
+        @order = Order.all
+        render "index"
+
     end
 
     def show
