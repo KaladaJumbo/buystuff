@@ -1,1 +1,23 @@
-new
+<h1>Make an Item</h1>
+
+<% @item.errors.full_messages.each do |e|%>
+    <p><%= e%></p>
+<%end%>
+<br>
+<br>
+<%= form_for @item do |f| %>
+    <%= f.label :name%>
+    <br>
+    <%= f.text_field :description%>
+    <br>
+    <br>
+    <%= f.label :weight%>
+    <br>
+    <%= f.number_field :weight%>
+    <br>
+    <%= f.label :price%>
+    <br>
+    <%= f.number_field :price, step:"0.01"%>
+    <br>
+    <%= f.submit "Submit the item"%>
+<%end%>

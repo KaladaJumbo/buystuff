@@ -18,23 +18,41 @@ class ItemsController < ApplicationController
     def new
 
         @item = Item.new
-        render :new 
+        render "new" 
 
     end
 
     def create
+        @item = Item.create(strong_params(:description, :weight, :price))
+        if @item.save
+            redirect_to item_path(@item)
+        else
 
+            redirect_to new_item_path
+        end
     end
 
     def edit
+
+        render "edit"
 
     end
 
     def update
 
+        @item.update(strong_params(:description, :weight, :price))
+        if @item.save
+            redirect_to item_path(@item)
+        else
+            redirect_to edit_item_path
+        end 
+
     end
 
     def destroy
+
+        @item.destroy
+        redirect_to items_path
 
     end
 
@@ -42,7 +60,7 @@ class ItemsController < ApplicationController
 
     def strong_params(*args)
 
-        params.require().permit(*args)
+        params.require(:item).permit(*args)
 
     end
 
