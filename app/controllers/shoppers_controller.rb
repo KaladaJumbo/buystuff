@@ -1,4 +1,4 @@
-class CustomersController < ApplicationController
+class ShoppersController < ApplicationController
 
     def index
 
@@ -36,5 +36,6 @@ class CustomersController < ApplicationController
         params.require().permit(*args)
 
     end
+
 
 end
