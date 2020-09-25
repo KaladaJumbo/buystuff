@@ -1,1 +1,19 @@
-edit
+<h1>Edit your profile</h1>
+
+<% @customer.errors.full_messages.each do |e|%>
+    <p><%= e%></p>
+<%end%>
+<br>
+<br>
+<%= form_for @customer do |f| %>
+    <%= f.label :name%>
+    <br>
+    <%= f.text_field :name%>
+    <br>
+    <br>
+    <%= f.label :address%>
+    <br>
+    <%= f.text_area :address%>
+    <br>
+    <%= f.submit "Change you profile"%>
+<%end%>
