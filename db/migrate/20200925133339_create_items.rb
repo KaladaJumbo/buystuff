@@ -2,8 +2,8 @@ class CreateItems < ActiveRecord::Migration[5.1]
   def change
     create_table :items do |t|
       t.string :description
-      t.string :weight
-      t.string :price
+      t.integer :weight
+      t.float :price
 
       t.timestamps
     end
