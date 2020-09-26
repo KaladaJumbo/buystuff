@@ -2,14 +2,16 @@
 
 <p><%= @customer.address %></p>
 
-<div>latest_order: </div>
-<ol>
-<%@customer.orders.last.items.each do |item|%>
-    <li><%=item.name%></li>
+<%if !@customer.orders.empty?%>
+    <div>latest_order: </div>
+    <ol>
+    <%@customer.orders.last.items.each do |item|%>
+        <li><%=item.name%></li>
+    <%end%>
+    </ol>
+    order status: <%=@customer.orders.last.status%>
 <%end%>
-</ol>
-order status: <%=@customer.orders.last.status%>
-<br>
+
 <br>
 <br>
 
