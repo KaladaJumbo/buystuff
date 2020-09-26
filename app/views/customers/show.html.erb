@@ -2,6 +2,17 @@
 
 <p><%= @customer.address %></p>
 
+<div>latest_order: </div>
+<ol>
+<%@customer.orders.last.items.each do |item|%>
+    <li><%=item.name%></li>
+<%end%>
+</ol>
+order status: <%=@customer.orders.last.status%>
+<br>
+<br>
+<br>
+
 <%= link_to "Edit Customer", edit_customer_path%>
 <br>
 <br>
@@ -9,3 +20,6 @@
 <br>
 <br>
 <%= link_to "Return to Index", customers_path%>
+<br>
+<br>
+<%= link_to "Create an order", new_order_path%>

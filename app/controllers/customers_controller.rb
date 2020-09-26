@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
     before_action :define_variable, only: [:show, :edit, :update, :destroy]
 
     def index
-
+        cookies[:current_customer] = nil
         @customers = Customer.all
         render "index"
 
@@ -11,6 +11,7 @@ class CustomersController < ApplicationController
 
     def show
 
+        cookies[:current_customer] = params[:id]
         render "show"
 
     end

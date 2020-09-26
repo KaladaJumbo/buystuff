@@ -1,1 +1,16 @@
-new
+<h1>Place your order please</h1>
+
+<%@order.errors.full_messages.each do |message|%>
+    <%=message%>
+<%end%>
+
+<%=form_for @order do |f|%>
+    <p><%=f.label "please pick your items"%></p>
+    <p><%=f.collection_check_boxes(:item_ids, Item.all, :id, :name) do |b|%></p>
+        <%=b.check_box%> <%=b.label %>
+    <%end%>
+    <br>
+    <br>
+    <%=f.submit "place order"%>
+
+<%end%>
