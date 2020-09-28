@@ -3,12 +3,12 @@
 <br>
 <div class = items>
 <h3>Items</h3>
-<ul>
-<%@items.each do |item|%>
-    <li><%=link_to(item.description, item_path(item))%></li>
-    <br>
-    <br>
+    <ul id= list>
+        <%@items.each do |item|%>
+            <li><%=link_to(item.description, item_path(item))%></li>
+            <br>
+            <br>
 
-<%end%>
-</ul>
+        <%end%>
+    </ul>
 </div>
