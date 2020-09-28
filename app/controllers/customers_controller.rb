@@ -62,9 +62,8 @@ class CustomersController < ApplicationController
     end
 
     def post_login
-
-        current_user = Customer.find_by(name: params[:user][:username])
-        if current_user && current_user.password == params[:costomer][:password]
+        current_user = Customer.find_by(name: params[:customer][:username])
+        if current_user != nil && current_user.authenticate(params[:customer][:password]) 
             session[:current_user] = current_user.id
             redirect_to welcome_path
         else

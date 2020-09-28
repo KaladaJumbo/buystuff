@@ -49,7 +49,7 @@ class OrderItemsController < ApplicationController
         if session[:current_user]
             redirect_to welcome_path
         else 
-            render "login"
+            redirect_to login_path
         end
 
     end
