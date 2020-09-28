@@ -2,14 +2,21 @@
 <%=flash[:error]%>
 <br>
 <br>
-<%=form_for :user, url: "/login" do |f|%>
+<%=form_for :customer, url: "/login" do |f|%>
 <%=f.label :username%>
 <br>
 <%=f.text_field :username%>
 <br>
 <br>
+<%=f.label :password%>
+<br>
+<%=f.password_field :password%>
+<br>
+<br>
 <%=f.submit "login"%>
 <%end%>
 <br>
+<em><%=link_to "new customer?", new_customer_path%></em>
 <br>
-<em>if you are a shopper please login <%=link_to "here", shopper_login_path%></em>
+<br>
+<em>if you are a shopper or want to volunteer please click <%=link_to "here", shopper_login_path%></em>

@@ -22,11 +22,11 @@ class CustomersController < ApplicationController
     end
 
     def create
-        @customer = Customer.create(strong_params(:name, :address))
-        if @customer.save
+        @customer = Customer.create(strong_params(:name, :address, :password))
+        if @customer.save && @customer.authenticate(params[:customer][:password])
+            session[:current_user] = @customer.id
             redirect_to customer_path(@customer)
         else
-
             redirect_to new_customer_path
         end
     end
@@ -64,7 +64,7 @@ class CustomersController < ApplicationController
     def post_login
 
         current_user = Customer.find_by(name: params[:user][:username])
-        if current_user
+        if current_user && current_user.password == params[:costomer][:password]
             session[:current_user] = current_user.id
             redirect_to welcome_path
         else
