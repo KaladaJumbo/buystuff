@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    background-color:#519872;
+    margin: 0%;
+    
+
+}
+
+ .title {
+    background-color:#0D2818;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+ }
+
+ a:link {
+    color: #386FA4;
+  }
+  
+  /* visited link */
+a:visited {
+    color: #1C2541;
+  }
+  
+  /* mouse over link */
+a:hover {
+    color: hotpink;
+  }
+
+ .box-1 {
+
+    padding: 2%;
+
+ }
