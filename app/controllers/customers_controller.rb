@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
 
     before_action :define_variable, only: [:show, :edit, :update, :destroy]
+    before_action :restrict_access, only: [:show, :edit, :update, :destroy, :index]
 
     def index
         cookies[:current_customer] = nil
@@ -51,7 +52,7 @@ class CustomersController < ApplicationController
     def destroy
 
         @customer.destroy
-        redirect_to customers_path
+        redirect_to login_path
 
     end
 
@@ -91,6 +92,12 @@ class CustomersController < ApplicationController
     def define_variable
 
         @customer = Customer.find(params[:id])
+
+    end
+
+    def restrict_access
+
+        return head(:forbidden) unless session.include? :current_user
 
     end
 
