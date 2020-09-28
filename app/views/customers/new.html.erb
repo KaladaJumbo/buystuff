@@ -1,5 +1,5 @@
-<h1>Register as a Customer</h1>
-
+<h1 class=title><%= render partial: "shared/homeicon"%>Register as a Customer</h1>
+<div class = box-left>
 <% @customer.errors.full_messages.each do |e|%>
     <p><%= e%></p>
 <%end%>
@@ -22,3 +22,4 @@
     <br>
     <%= f.submit "Register now"%>
 <%end%>
+</div>

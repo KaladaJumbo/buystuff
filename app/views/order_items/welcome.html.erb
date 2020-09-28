@@ -1,6 +1,7 @@
 <h2 class=title ><%= render partial: "shared/homeicon"%>Welcome to BuyStuff</h2>
 <br>
 <br>
+<div class= box-center>
 <%=link_to("Customer", customer_path(session[:current_user]))%>
 <br>
 <br>
@@ -17,3 +18,4 @@
 <br>
 <br>
 <%=link_to("logout", logout_path)%>
+</div>

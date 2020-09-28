@@ -1,5 +1,5 @@
-<h1>Place your order please</h1>
-
+<h1 class= title><%= render partial: "shared/homeicon"%>Place your order please</h1>
+<div class= box-left>
 <%@order.errors.full_messages.each do |message|%>
     <%=message%>
 <%end%>
@@ -14,3 +14,4 @@
     <%=f.submit "place order"%>
 
 <%end%>
+</div>
