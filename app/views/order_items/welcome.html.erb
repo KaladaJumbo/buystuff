@@ -1,7 +1,7 @@
 homepage
 <br>
 <br>
-<%=link_to("Customer", customers_path)%>
+<%=link_to("Customer", customer_path(session[:current_user]))%>
 <br>
 <br>
 <%=link_to("shopper", shoppers_path)%>
@@ -14,4 +14,7 @@ homepage
 <br>
 <br>
 <%=link_to("order_items", order_items_path)%>
+<br>
+<br>
+<%=link_to("logout", logout_path)%>
 

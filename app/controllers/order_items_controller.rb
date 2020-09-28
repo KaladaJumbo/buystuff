@@ -43,9 +43,15 @@ class OrderItemsController < ApplicationController
         render "welcome"
 
     end
-  
-    def about
-  
+
+    def homepage
+
+        if session[:current_user]
+            redirect_to welcome_path
+        else 
+            render "login"
+        end
+
     end
 
     private 
