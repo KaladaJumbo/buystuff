@@ -52,7 +52,7 @@ class CustomersController < ApplicationController
     def destroy
 
         @customer.destroy
-        redirect_to customers_path
+        redirect_to login_path
 
     end
 
