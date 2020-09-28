@@ -1,0 +1,15 @@
+<h1>Login</h1>
+<%=flash[:error]%>
+<br>
+<br>
+<%=form_for :user, url: "/login" do |f|%>
+<%=f.label :username%>
+<br>
+<%=f.text_field :username%>
+<br>
+<br>
+<%=f.submit "login"%>
+<%end%>
+<br>
+<br>
+<em>if you are a shopper please login <%=link_to "here", shopper_login_path%></em>

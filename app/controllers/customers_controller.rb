@@ -55,6 +55,32 @@ class CustomersController < ApplicationController
 
     end
 
+    def login #clean up one day 
+
+        render "login"
+  
+    end
+
+    def post_login
+
+        current_user = Customer.find_by(name: params[:user][:username])
+        if current_user
+            session[:current_user] = current_user.id
+            redirect_to welcome_path
+        else
+            flash[:error] = "this user does not exist please try again"
+            redirect_to login_path
+        end
+        
+    end
+
+    def logout
+
+        session.clear
+        flash[:error] = "you have been logged out"
+        redirect_to login_path
+    end
+
     private 
 
     def strong_params(*args)
