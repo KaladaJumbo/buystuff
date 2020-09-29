@@ -60,7 +60,7 @@ class ShoppersController < ApplicationController
             redirect_to shopper_welcome_path
         else
             flash[:error] = "this user does not exist please try again"
-            render shopper_login_path
+            redirect_to shopper_login_path
         end
 
     end
