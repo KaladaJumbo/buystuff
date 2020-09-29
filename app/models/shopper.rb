@@ -5,5 +5,6 @@ class Shopper < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
     validates :password_digest, presence: true
-
+    validates :username, presence: true
+    validates :address, presence: true
 end

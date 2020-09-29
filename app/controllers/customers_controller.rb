@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
     before_action :restrict_access, only: [:show, :edit, :update, :destroy, :index]
 
     def index
-        cookies[:current_customer] = nil
+
         @customers = Customer.all
         render "index"
 
@@ -23,10 +23,10 @@ class CustomersController < ApplicationController
     end
 
     def create
-        @customer = Customer.create(strong_params(:name, :address, :password))
+        @customer = Customer.create(strong_params(:name, :address, :password, :username))
         if @customer.save && @customer.authenticate(params[:customer][:password])
             session[:current_user] = @customer.id
-            redirect_to customer_path(@customer)
+            redirect_to welcome_path
         else
             redirect_to new_customer_path
         end
@@ -63,7 +63,7 @@ class CustomersController < ApplicationController
     end
 
     def post_login
-        current_user = Customer.find_by(name: params[:customer][:username])
+        current_user = Customer.find_by(username: params[:customer][:username])
         if current_user != nil && current_user.authenticate(params[:customer][:password]) 
             session[:current_user] = current_user.id
             redirect_to welcome_path
