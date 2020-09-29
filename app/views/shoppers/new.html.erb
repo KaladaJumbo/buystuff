@@ -1,1 +1,31 @@
-new
+<h1>Sign up as a shopper</h1>
+<br>
+<br>
+<%=form_for @shopper do |f|%>
+<%=f.label :name%>
+<br>
+<%=f.text_field :name%>
+<br>
+<br>
+<%=f.label :address%>
+<br>
+<%=f.text_area :address%>
+<br>
+<br>
+<%=f.label "max weight you can carry per order"%>
+<br>
+<%=f.number_field :max_weight%>
+<br>
+<br>
+<%=f.label :username%>
+<br>
+<%=f.text_field :username%>
+<br>
+<br>
+<%=f.label :password%>
+<br>
+<%=f.password_field :password%>
+<br>
+<br>
+<%=f.submit "submit registration"%>
+<%end%>

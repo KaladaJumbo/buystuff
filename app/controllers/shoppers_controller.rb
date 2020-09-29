@@ -17,9 +17,15 @@ class ShoppersController < ApplicationController
 
     def new
 
+        @shopper = Shopper.new
+        render "new"
+
     end
 
     def create
+
+        @shopper = Shopper.create(strong_params(:name, :address, :max_weight))
+        
 
     end
 
@@ -34,6 +40,19 @@ class ShoppersController < ApplicationController
     def destroy
 
     end
+
+    def login
+
+    end
+
+    def post_login
+
+    end
+
+    def logout
+
+    end
+
 
     private 
 

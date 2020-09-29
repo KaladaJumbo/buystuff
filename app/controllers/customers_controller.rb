@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
     before_action :restrict_access, only: [:show, :edit, :update, :destroy, :index]
 
     def index
-        cookies[:current_customer] = nil
+        
         @customers = Customer.all
         render "index"
 
