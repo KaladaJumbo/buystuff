@@ -10,45 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200928181843) do
-
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.string "description"
-    t.integer "weight"
-    t.float "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "order_items", force: :cascade do |t|
-    t.integer "item_id"
-    t.integer "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "shopper_id"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shoppers", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.integer "max_weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

@@ -1,3 +1,29 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.items {
+    margin: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border:1px #ccc solid;
+    border-radius:15px;
+ }
+
+ .items h3{
+    text-align:center;
+ }
+
+ ul#list {
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    height: 20vh;
+    list-style: none;
+  }
+
+
+
+ ul#list li{
+     flex: 1 0 25%;
+ }

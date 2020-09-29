@@ -1,10 +1,10 @@
 <h1 class= title><%= render partial: "shared/homeicon"%><%=@customer.name.titlecase%></h1>
 <div class= box-left>
-<p><%= @customer.address %></p>
+<p>Current listed address: <%= @customer.address %></p>
 
 <%if !@customer.orders.empty?%>
     <div>latest_order: </div>
-    <ol>
+    <ol id= customer_order>
     <%@customer.orders.last.items.each do |item|%>
         <li><%=item.name%></li>
     <%end%>

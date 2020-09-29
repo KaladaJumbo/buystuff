@@ -13,11 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+* global css
+*/
  body {
     background-color:#519872;
     margin: 0%;
-    
-
 }
 
  .title {
@@ -57,17 +59,28 @@ a:hover {
    margin: 3%;
    padding-top: .5%;
 }
+/*
+* End global / begin welcome css
+*/
 
- .items {
-    margin: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    border:1px #ccc solid;
-    padding:5px;
-    border-radius:15px;
- }
+ul#home_links{
+   list-style: none;
+   font-size: 18px;
+   text-align: center;
+   
+}
+ul#home_links li{
+   background-color: #0D2818;
+   border-style: solid;
+   width: 100px;
+   margin: auto;
+   padding: .3%;
+   border-radius: 5px;
 
- .items h3{
-    text-align:center;
- }
- 
+}
+ul#home_links li a:visited {
+   color: #fff;
+}
+ul#home_links li a:hover {
+   color: hotpink;
+}

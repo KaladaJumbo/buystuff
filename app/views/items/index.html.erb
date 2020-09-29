@@ -6,9 +6,6 @@
     <ul id= list>
         <%@items.each do |item|%>
             <li><%=link_to(item.description, item_path(item))%></li>
-            <br>
-            <br>
-
         <%end%>
     </ul>
 </div>
