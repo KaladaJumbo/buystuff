@@ -34,7 +34,6 @@ a:hover {
 
  .box-center {
     text-align: center;
-    font-size: 24;
     padding-top: 1%;
  }
 
@@ -50,20 +49,30 @@ ul#home_links{
    list-style: none;
    font-size: 18px;
    text-align: center;
+   padding-top: 10px;
+   padding-left: 40%;
+   padding-right: 40%;
    
 }
 ul#home_links li{
    background-color: #0D2818;
    border-style: solid;
-   width: 100px;
-   margin: auto;
-   padding: .3%;
+   width: 120px;
+   margin: 1.5%;
+   padding: .2%;
    border-radius: 5px;
 
 }
+
+ul#home_links li a {
+   padding-right: 25px;
+   padding-left: 25px;
+}
+
 ul#home_links li a:visited {
    color: #fff;
 }
 ul#home_links li a:hover {
    color: hotpink;
 }
+
