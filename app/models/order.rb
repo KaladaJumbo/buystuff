@@ -5,4 +5,5 @@ class Order < ApplicationRecord
     has_many :items, through: :order_items
 
     validates :item_ids, presence: true 
+    validates :name, presence: true
 end

@@ -8,16 +8,14 @@
 require "faker"
 
 Customer.destroy_all
-
-10.times do 
-
-    Customer.create(name: Faker::Name.name, address: Faker::Address.full_address)
-
-end
+Shopper.destroy_all
+Item.destroy_all
+Order.destroy_all
+OrderItem.destroy_all
 
 rando_boi = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19]
 
-10.times do 
+20.times do 
 
     Item.create(description: Faker::Food.ingredient, weight: rando_boi.sample, price: rando_boi.sample)
 

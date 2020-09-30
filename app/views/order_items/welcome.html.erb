@@ -1,17 +1,10 @@
 <h2 class=title ><%= render partial: "shared/homeicon"%>Welcome to BuyStuff</h2>
 <div class= container id = home_con >
     <ul id= home_links>
-        <li><%=link_to("Customer", customer_path(session[:current_user]), class:"btn" ,id: "cust")%></li>
+        <li><%=link_to("My Info and Orders", customer_path(session[:current_user]))%></li>
         <br>
-        <li><%=link_to("shopper", shoppers_path, class:"btn")%></li>
+        <li><%=link_to("Items List", items_path)%></li>
         <br>
-        <li><%=link_to("items", items_path, class:"btn")%></li>
-        <br>
-        <li><%=link_to("orders", orders_path, class:"btn")%></li>
-        <br>
-        <li><%=link_to("order_items", order_items_path, class:"btn")%></li>
-        <br>
-        <li><%=link_to("logout", logout_path, class:"btn")%></li>
-        
+        <li><%=link_to("Logout", logout_path)%></li>
     </ul>
 </div>

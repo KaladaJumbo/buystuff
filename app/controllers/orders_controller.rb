@@ -5,14 +5,14 @@ class OrdersController < ApplicationController
 
     def index
 
-        @order = Order.all
+        @orders = Order.where("status = 'pending'")
         render "index"
 
     end
 
     def show
 
-        "show"
+        render "show"
 
     end
 
@@ -25,12 +25,12 @@ class OrdersController < ApplicationController
 
     def create
 
-        @order = Order.create(customer: Customer.find(cookies[:current_customer].to_i))
+        @order = Order.create(customer: Customer.find(session[:current_user].to_i), name: params[:order][:name])
         @order.status = "pending"
         @order.item_ids = params[:order][:item_ids]
         
         if @order.save
-            redirect_to customer_path(cookies[:current_customer].to_i)
+            redirect_to customer_path(session[:current_user].to_i)
         else
             render "new"
         end

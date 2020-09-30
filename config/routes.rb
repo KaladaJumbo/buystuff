@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/logout", to: "customers#logout", as: "logout"
   get "/shoppers_logout", to: "shoppers#logout", as: "shopper_logout"
   get "/shoppers_welcome", to: "shoppers#welcome", as: "shopper_welcome"
+  post "/shoppers_pickup/:id", to: "shoppers#pickup", as: "shopper_pickup"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

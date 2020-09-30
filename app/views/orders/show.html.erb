@@ -1,1 +1,32 @@
-show
+<%=@order.name%>
+<br>
+<br>
+Order Information:
+<br>
+<br>
+<p>total Weight: <%=@order.items.sum {|i| i.weight}%></p>
+
+List:
+<br>
+<br>
+<div>
+<%@order.items.each do |item|%>
+    <p><%=link_to item.name, item_path(item)%></p>
+    <br>
+<%end%>
+</div>
+
+Customer Information:
+<br>
+<br>
+<div>
+<p>Name:<%=@order.customer.name%></p>
+<p>Address: <%=@order.customer.address%></p>
+</div>
+
+
+<%if !@order.shopper%>
+    <%=button_to("add to pickup list", shopper_pickup_path(@order) )%>
+<%end%>
+
+<%=link_to("back to index", shopper_welcome_path)%>

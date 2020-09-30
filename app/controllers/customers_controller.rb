@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
 
     def show
 
-        cookies[:current_customer] = params[:id]
+        session[:current_user] = params[:id]
         render "show"
 
     end
