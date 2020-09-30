@@ -1,1 +1,23 @@
-<%=@shopper.name%>
+<h1><%=@shopper.name%></h1>
+<br>
+<br>
+Address: <%=@shopper.address%>
+<br>
+<br>
+<div>
+<%if !!@shopper.orders%>
+    pickup list: 
+    <br>
+    <br>
+    <ul>
+    <%@shopper.orders.each do |order|%>
+        <li><%=link_to(order.name, order_path(order))%></li>
+        <br>
+    <%end%>
+    </ul>
+<%else%>
+    <p>no orders picked up. Click <%=link_to("here", orders_path)%> to grab an order!</p>
+<%end%>
+</div>
+
+<%=link_to "index", shopper_welcome_path%>

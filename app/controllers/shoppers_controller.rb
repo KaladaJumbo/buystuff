@@ -79,6 +79,15 @@ class ShoppersController < ApplicationController
 
     end
 
+    def pickup
+
+        order = Order.find(params[:id])
+        order.update(shopper: Shopper.find(session[:current_shopper]), status: "processed")
+        order.save 
+        redirect_to shopper_path(session[:current_shopper])
+
+    end
+
 
     private 
 
