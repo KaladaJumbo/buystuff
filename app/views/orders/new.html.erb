@@ -5,6 +5,8 @@
 <%end%>
 
 <%=form_for @order do |f|%>
+    <p><%=f.label "order name:"%></p>
+    <p><%=f.text_field :name%></p>
     <p><%=f.label "please pick your items"%></p>
     <p><%=f.collection_check_boxes(:item_ids, Item.all, :id, :name) do |b|%></p>
         <%=b.check_box%> <%=b.label %>

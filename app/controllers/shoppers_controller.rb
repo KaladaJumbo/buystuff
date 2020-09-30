@@ -26,7 +26,7 @@ class ShoppersController < ApplicationController
 
         @shopper = Shopper.create(strong_params(:name, :address, :max_weight, :password, :username))
         if @shopper.save && @shopper.authenticate(params[:shopper][:password])
-            session[:current_user] = @shopper.id
+            session[:current_shopper] = @shopper.id
             redirect_to shopper_welcome_path
         else
             redirect_to new_shopper_path
@@ -70,6 +70,12 @@ class ShoppersController < ApplicationController
         session.clear
         flash[:error] = "you have been logged out"
         redirect_to shopper_login_path
+
+    end
+
+    def welcome
+    
+        @shopper = Shopper.find(session[:current_shopper])
 
     end
 

@@ -2,16 +2,13 @@
 <br>
 <br>
 <div class= box-center>
-<%=link_to("shopper", shopper_path(session[:current_shopper]))%>
+<%=link_to("shopper", shopper_path(@shopper))%>
 <br>
 <br>
 <%=link_to("items", items_path)%>
 <br>
 <br>
 <%=link_to("orders", orders_path)%>
-<br>
-<br>
-<%=link_to("order_items", order_items_path)%>
 <br>
 <br>
 <%=link_to("logout", shopper_logout_path)%>

@@ -1,1 +1,8 @@
-index
+<%if @orders == nil%>
+    There are currently no orders available
+<%else%>
+    <%@orders.each do |order|%>
+        <p><%=link_to(order.name, order_path(order))%></p>
+    <%end%>
+<%end%>
+
