@@ -1,28 +1,27 @@
 <h1 class= title><%= render partial: "shared/homeicon"%><%=@customer.name.titlecase%></h1>
-<div class= box-left>
-<p>Current listed address: <%= @customer.address %></p>
+<div class= container id = show_c>
+    <p>Current listed address: <%= @customer.address %></p>
 
-<%if !@customer.orders.empty?%>
-    <div>latest_order: </div>
-    <ol id= customer_order>
-    <%@customer.orders.last.items.each do |item|%>
-        <li><%=item.name%></li>
+    <div class= continer id = show_orders_c> 
+    <h4 id = orders_table_title>Orders Table<h4>
+    <%if !@customer.orders.empty?%>
+        <h4>Latest Order: </h4>
+        <ol id= customer_order>
+        <%@customer.orders.last.items.each do |item|%>
+            <li><%=item.name%></li>
+        <%end%>
+        </ol>
+        Order Status: <%=@customer.orders.last.status%>
+    <%else%>
+        <h5>No current orders</h5>
     <%end%>
-    </ol>
-    order status: <%=@customer.orders.last.status%>
-<%end%>
+    </div>
 
-<br>
-<br>
+    <%= link_to "Edit Customer", edit_customer_path , class: "btn"%>
 
-<%= link_to "Edit Customer", edit_customer_path%>
-<br>
-<br>
-<%= link_to "Delete Customer", customer_path(@customer), method: "delete"%>
-<br>
-<br>
-<%= link_to "Return to Index", welcome_path%>
-<br>
-<br>
-<%= link_to "Create an order", new_order_path%>
+    <%= link_to "Delete Customer", customer_path(@customer),class: "btn", method: "delete"%>
+
+    <%= link_to "Return to Index", welcome_path, class: "btn"%>
+
+    <%= link_to "Create an order", new_order_path, class: "btn"%>
 </div>

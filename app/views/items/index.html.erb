@@ -1,11 +1,11 @@
 <h1 class=title><%= render partial: "shared/homeicon"%>Item Index</h1>
-<br>
-<br>
-<div class = container id = test>
-<h3>Items</h3>
-    <ul class =list-inline>
-        <%@items.each do |item|%>
-            <li><%=link_to(item.description, item_path(item))%></li>
-        <%end%>
-    </ul>
+<div class = container id = items_con>
+    <h3 id = items_title>Items</h3>
+    <div class = "container">
+        <ul class =list-inline id = items_list>
+            <%@items.each do |item|%>
+                <li><%=link_to(item.description, item_path(item))%></li>
+            <%end%>
+        </ul>
+    <div>
 </div>

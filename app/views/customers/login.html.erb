@@ -1,25 +1,22 @@
 <h1 class= title><%= render partial: "shared/homeicon"%>Login</h1>
-<%=flash[:error]%>
-<br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FRxII8uYlGo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br>
-<div class= box-center>
-<%=form_for :customer, url: "/login" do |f|%>
-<%=f.label :username%>
-<br>
-<%=f.text_field :username%>
-<br>
-<br>
-<%=f.label :password%>
-<br>
-<%=f.password_field :password%>
-<br>
-<br>
-<%=f.submit "login"%>
-<%end%>
-<br>
-<em><%=link_to "new customer?", new_customer_path%></em>
-<br>
-<br>
-<em>if you are a shopper or want to volunteer please click <%=link_to "here", shopper_login_path%></em>
+
+<div class = container-fluid id = log_body_c>
+    <div class= container id = "log_vid_c">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FRxII8uYlGo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class= container id = "log_form_con">
+        <p id = log_err_c><%=flash[:error]%><p>
+        <div class>
+        <%=form_for :customer, url: "/login", :html => {:class => 'form_horizontal'} do |f|%>
+            <%=f.label :username%>
+            <%=f.text_field :username,  class: "form-control", placeholder: "Enter username"%>
+            <%=f.label :password%>
+            <%=f.password_field :password, class: "form-control", placeholder: "Enter password"%>
+            <%=f.submit "login", class:"btn btn-default", id:"log_btn_c"%>
+        <%end%>
+        </div>
+        <em><%=link_to "new customer?", new_customer_path%></em>
+        <em>if you are a shopper or want to volunteer please click <%=link_to "here", shopper_login_path%></em>
+    </div>
 </div>
+

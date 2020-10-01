@@ -43,6 +43,8 @@ a:hover {
 }
 /*
 * End global / begin welcome css
+* Use ids to target everything 
+* for some reason scss only works from here
 */
 
 ul#home_links{
@@ -52,21 +54,18 @@ ul#home_links{
    padding-top: 10px;
    padding-left: 40%;
    padding-right: 40%;
-   
+   margin-top: 3%;
 }
-ul#home_links li{
-   background-color: #0D2818;
-   border-style: solid;
-   width: 120px;
-   margin: 1.5%;
-   padding: .2%;
-   border-radius: 5px;
 
-}
 
 ul#home_links li a {
+   background-color: #0D2818;
+   border-style: solid;
+   width: auto;
    padding-right: 25px;
    padding-left: 25px;
+   margin-bottom: 5%;
+   
 }
 
 ul#home_links li a:visited {
@@ -74,5 +73,73 @@ ul#home_links li a:visited {
 }
 ul#home_links li a:hover {
    color: hotpink;
+}
+
+/*
+*login page for customer CSS
+*/
+
+#log_vid_c{
+   float: right;
+   padding-left: 10%;
+   margin-top: 5%;
+}
+
+#log_form_con{
+   margin-top: 7%;
+   margin-left: 19%;
+   float: left;
+   width: 300px;
+}
+
+#log_err_c{
+   color: red;
+}
+
+#log_btn_c{
+   margin-top: 4%;
+   background-color: white;
+}
+
+/*
+* Show page for customer Css
+*/
+
+#show_c {
+   margin-top: 4%;
+}
+
+#show_orders_c{
+   border: solid;
+   margin-bottom: 2%;
+   padding: 1.5%;
+   padding-top: .5%;
+   border-radius: 5px;
+}
+#orders_table_title{
+   text-align: center;
+   padding-bottom: 2%;
+
+}
+
+.btn{
+   background-color: #D4F2CF;
+}
+
+/*
+* Index CSS
+*/
+
+#items_con{
+   margin-top: 5%;
+   border:solid whitesmoke;
+   border-radius: 5px;
+}
+#items_title{
+   text-align: center;
+}
+
+#items_list{
+   font-size: 18px;
 }
 
