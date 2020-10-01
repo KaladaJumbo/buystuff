@@ -6,7 +6,7 @@
     </div>
     <div class= container id = "log_form_con">
         <p id = log_err_c><%=flash[:error]%><p>
-        <div class>
+        <div>
         <%=form_for :customer, url: "/login", :html => {:class => 'form_horizontal'} do |f|%>
             <%=f.label :username%>
             <%=f.text_field :username,  class: "form-control", placeholder: "Enter username"%>

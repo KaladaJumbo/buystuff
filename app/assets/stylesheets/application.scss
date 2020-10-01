@@ -102,6 +102,21 @@ ul#home_links li a:hover {
 }
 
 /*
+* Loggin page for shoppers CSS
+*/
+
+#log_body_s{
+   width: 20%;
+}
+#form_for_con_s{
+   font-size: 18pt;
+}
+.form-control{
+   font-size: 18px;
+   margin-bottom: 3%;
+}
+
+/*
 * Show page for customer Css
 */
 
@@ -124,6 +139,7 @@ ul#home_links li a:hover {
 
 .btn{
    background-color: #D4F2CF;
+   font-size: 24px;
 }
 
 /*
@@ -143,3 +159,82 @@ ul#home_links li a:hover {
    font-size: 18px;
 }
 
+
+/*
+* Shopper_new CSS
+*/
+
+#new_form_s{
+   margin-right: 45%;
+   margin-left: 20%;
+   margin-top: 3%;
+}
+
+/*
+* Shoppers welcome page CSS
+*/
+
+#home_links_s{
+   list-style: none;
+   text-align: center;
+
+}
+
+ul#home_links_s li{
+   margin-top: 1%;
+}
+
+/*
+* Shoppers show CSS
+*/
+
+#shopper_show_content{
+   text-align: center;
+}
+
+#shopper_show_info{
+   border: solid black;
+   border-radius: 5px;
+   width: 30%;
+   text-align: left;
+   margin-top: 3%;
+   padding: 0%;
+}
+#info_box_header{
+   text-align: center;
+   color: blanchedalmond;
+   background-color: black;
+   padding: 2%;
+   margin-top: 0%;
+   font-size: 20px;
+}
+
+.free_text{
+   font-size: 16px;
+}
+
+/*
+* Avalible Order index CSS
+*/
+
+#Order_index_content{
+   text-align: center;
+   border: solid black;
+   border-radius: 5px;
+   width: 30%;
+   margin-top: 1.5%;
+   padding: 0%;
+}
+
+#info_box_title{
+   text-align: center;
+   color: blanchedalmond;
+   background-color: black;
+   padding: 2%;
+   margin-top: 0%;
+   font-size: 20px;
+}
+
+#index_btn{
+   text-align: center;
+}

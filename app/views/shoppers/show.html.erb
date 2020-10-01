@@ -1,23 +1,30 @@
-<h1><%=@shopper.name%></h1>
-<br>
-<br>
-Address: <%=@shopper.address%>
-<br>
-<br>
-<div>
-<%if !!@shopper.orders%>
-    pickup list: 
-    <br>
-    <br>
-    <ul>
-    <%@shopper.orders.each do |order|%>
-        <li><%=link_to(order.name, order_path(order))%></li>
-        <br>
-    <%end%>
-    </ul>
-<%else%>
-    <p>no orders picked up. Click <%=link_to("here", orders_path)%> to grab an order!</p>
-<%end%>
-</div>
+<h1 class = title><%= render partial: "shared/homeicon"%><%=@shopper.name%></h1>
 
-<%=link_to "index", shopper_welcome_path%>
+<div class = container-fluid id = shopper_show_content>
+    <div class = container-fluid id = shopper_show_info>
+        <h5 id = info_box_header>Info box</h5>
+        
+
+        <div class = container-fluid id = shopper_show_orders>
+            <p class = free_text>Address: <%=@shopper.address%><p>
+            <%if !!@shopper.orders%>
+                <p class = free_text>pickup list: </p>
+
+                <ul>
+                    <%@shopper.orders.each do |order|%>
+                        <li><%=link_to(order.name, order_path(order))%></li>
+                        <br>
+                    <%end%>
+                </ul>
+
+            <%else%>
+                <p>no orders picked up. Click <%=link_to("here", orders_path)%> to grab an order!</p>
+            <%end%>
+
+        </div>
+    </div>
+
+    <div class = free_btn>
+        <%=link_to "index", shopper_welcome_path, class: "btn"%>
+    </div>
+</div>

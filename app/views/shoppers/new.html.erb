@@ -1,32 +1,21 @@
-<h1>Sign up as a shopper</h1>
-<br>
-<%=flash[:error]%>
-<br>
-<%=form_for @shopper do |f|%>
-<%=f.label :name%>
-<br>
-<%=f.text_field :name%>
-<br>
-<br>
-<%=f.label :address%>
-<br>
-<%=f.text_area :address%>
-<br>
-<br>
-<%=f.label "max weight you can carry per order"%>
-<br>
-<%=f.number_field :max_weight%>
-<br>
-<br>
-<%=f.label :username%>
-<br>
-<%=f.text_field :username%>
-<br>
-<br>
-<%=f.label :password%>
-<br>
-<%=f.password_field :password%>
-<br>
-<br>
-<%=f.submit "submit registration"%>
+<h1 class = title><%= render partial: "shared/homeicon"%>Sign up as a shopper</h1>
+<div class = container-fluid id = new_form_s>
+
+    <p id = log_err_s><%=flash[:error]%><p>
+
+    <div class = container-fluid id = "form_for_shopper_new">
+        <%=form_for @shopper, class:"form_horizontal" do |f|%>
+        <%=f.label :name%>
+        <%=f.text_field :name, class: "form-control", placeholder: "Enter your name"%>
+        <%=f.label :address%>
+        <%=f.text_area :address, class: "form-control", placeholder: "Enter your address"%>
+        <%=f.label "max weight you can carry per order"%>
+        <%=f.number_field :max_weight, class: "form-control", placeholder: "max carry weight"%>
+        <%=f.label :username%>
+        <%=f.text_field :username, class: "form-control", placeholder: "Enter username"%>
+        <%=f.label :password%>
+        <%=f.password_field :password, class: "form-control", placeholder: "Enter password"%>
+        <%=f.submit "submit registration", class:"btn btn-default", id:"log_btn_s"%>
+    <div>
+</div>
 <%end%>

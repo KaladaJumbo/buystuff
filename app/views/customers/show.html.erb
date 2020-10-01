@@ -3,25 +3,22 @@
     <p>Current listed address: <%= @customer.address %></p>
 
     <div class= continer id = show_orders_c> 
-    <h4 id = orders_table_title>Orders Table<h4>
-    <%if !@customer.orders.empty?%>
-        <h4>Latest Order: </h4>
-        <ol id= customer_order>
-        <%@customer.orders.last.items.each do |item|%>
-            <li><%=item.name%></li>
+        <h4 id = orders_table_title>Orders Table<h4>
+        <%if !@customer.orders.empty?%>
+            <h4>Latest Order: </h4>
+            <ol id= customer_order>
+            <%@customer.orders.last.items.each do |item|%>
+                <li><%=item.name%></li>
+            <%end%>
+            </ol>
+            Order Status: <%=@customer.orders.last.status%>
+        <%else%>
+            <h5>No current orders</h5>
         <%end%>
-        </ol>
-        Order Status: <%=@customer.orders.last.status%>
-    <%else%>
-        <h5>No current orders</h5>
-    <%end%>
     </div>
 
     <%= link_to "Edit Customer", edit_customer_path , class: "btn"%>
-
     <%= link_to "Delete Customer", customer_path(@customer),class: "btn", method: "delete"%>
-
     <%= link_to "Return to Index", welcome_path, class: "btn"%>
-
     <%= link_to "Create an order", new_order_path, class: "btn"%>
 </div>

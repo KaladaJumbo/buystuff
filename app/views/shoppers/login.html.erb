@@ -1,24 +1,24 @@
 <h1 class= title><%= render partial: "shared/homeicon"%>Login</h1>
-<%=flash[:error]%>
-<br>
-<br>
-<div class= box-center>
-<%=form_for :shopper, url: "/shoppers_login" do |f|%>
-<%=f.label :username%>
-<br>
-<%=f.text_field :username%>
-<br>
-<br>
-<%=f.label :password%>
-<br>
-<%=f.password_field :password%>
-<br>
-<br>
-<%=f.submit "login"%>
-<%end%>
-<br>
-<em>would you like to volunteer to be a <b><u><%=link_to "new shopper", new_shopper_path%></u></b>?</em>
-<br>
-<br>
-<em>if you are a customer please click <b><u><%=link_to "here", login_path%></u></b></em>
+
+<div class = container-fluid id = log_body_s>
+    <div class = container-fluid id = log_form_s> 
+
+        <p id = log_err_s><%=flash[:error]%></p>
+
+        <div id = "form_for_shopper_login">
+
+            <%=form_for :shopper, url: "/shoppers_login", class: "form_horizontal" do |f|%>
+            <%=f.label :username%>
+            <%=f.text_field :username, class: "form-control", placeholder: "Enter username"%>
+            <%=f.label :password%>
+            <%=f.password_field :password, class: "form-control", placeholder: "Enter password"%>
+            <%=f.submit "login", class:"btn btn-default", id:"log_btn_s"%>
+
+        </div>
+    <%end%>
+    </div>
+
+    <em>would you like to volunteer to be a <b><u><%=link_to "new shopper", new_shopper_path%></u></b>?</em>
+    <em>if you are a customer please click <b><u><%=link_to "here", login_path%></u></b></em>
+
 </div>
