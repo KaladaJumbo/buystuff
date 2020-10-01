@@ -1,2 +1,7 @@
-<%= link_to image_tag('https://www.flaticon.com/svg/static/icons/svg/135/135763.svg',size:"50x35"), welcome_path %>
-app/views/shared/_homeicon.html.erb
+<%if session[:current_user]%>
+    <%= link_to image_tag('https://www.flaticon.com/svg/static/icons/svg/135/135763.svg',size:"50x35"), welcome_path %>
+<%elsif session[:current_shopper]%>
+    <%= link_to image_tag('https://www.flaticon.com/svg/static/icons/svg/135/135763.svg',size:"50x35"), shopper_welcome_path %>
+<%else%>
+    <%= link_to image_tag('https://www.flaticon.com/svg/static/icons/svg/135/135763.svg',size:"50x35"), login_path %>
+<%end%>

@@ -64,4 +64,10 @@ class OrdersController < ApplicationController
 
     end
 
+    def restrict_access
+
+        return head(:forbidden) unless session.include? :current_shopper
+
+    end
+
 end

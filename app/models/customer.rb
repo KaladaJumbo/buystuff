@@ -7,4 +7,11 @@ class Customer < ApplicationRecord
     validates :address, presence: true, uniqueness: true
     validates :password_digest, presence: true
     validates :username, presence: true
+
+    def self.anyone_there? 
+
+        return !!session[:current_customer]
+
+    end
+
 end

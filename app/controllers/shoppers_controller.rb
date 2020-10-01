@@ -1,6 +1,7 @@
 class ShoppersController < ApplicationController
 
     before_action :define_variable, only: [:show, :edit, :update, :destroy]
+    before_action :restrict_access, only: [:show, :edit, :update, :destroy, :index, :welcome]
 
     def index
 
@@ -100,6 +101,12 @@ class ShoppersController < ApplicationController
     def define_variable
 
         @shopper = Shopper.find(params[:id])
+
+    end
+
+    def restrict_access
+
+        return head(:forbidden) unless session.include? :current_shopper
 
     end
 
