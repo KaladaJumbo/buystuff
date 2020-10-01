@@ -1,6 +1,7 @@
 <h1 class = title><%= render partial: "shared/homeicon"%>Available Orders</h1>
 
 <div class = container-fluid id = Order_index_content>
+
     <%if @orders == nil%>
         <p>There are currently no orders available</p>
     <%else%>
@@ -9,7 +10,11 @@
             <p><%=link_to(order.name, order_path(order), class: "btn")%></p>
         <%end%>
     <%end%>
+
 </div>
+
 <div id = index_btn>
+
     <%= link_to "Return to Index", shopper_welcome_path, class: "btn"%>
+    
 </div>

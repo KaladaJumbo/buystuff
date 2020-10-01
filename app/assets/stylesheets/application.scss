@@ -238,3 +238,64 @@ ul#home_links_s li{
 #index_btn{
    text-align: center;
 }
+
+/*
+* Orders Show CSS
+*/
+
+#order_show_content{
+   text-align: center;
+   width: 30%;
+   margin-top: 1.5%;
+   padding: 0%;
+}
+
+#order_box{
+   border: solid black;
+   border-radius: 5px;
+   margin-bottom: 1.5%;
+   padding: 0%;
+}
+
+#order_box_title{
+   color: blanchedalmond;
+   background-color: black;
+   padding: 2%;
+   margin-top: 0%;
+   font-size: 24px;
+}
+
+.total_weight{
+   font-size: 20px;
+   color: blanchedalmond;
+   text-decoration: underline;
+}
+
+#items_list_header{
+   text-decoration: underline;
+   color: black;
+   font-size: 20px;
+
+}
+
+#order_list_items{
+   margin-bottom: 5%;
+   font-size: 17px;
+
+}
+
+#order_show_address{
+   margin-bottom: 0%;
+}
+
+#Add_to_btn{
+   float: left;
+}
+
+#to_index_btn{
+   float: right;
+}
+
+.text{
+   font-size: 16px;
+}
