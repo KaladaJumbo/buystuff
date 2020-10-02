@@ -30,7 +30,7 @@ class ShoppersController < ApplicationController
             session[:current_shopper] = @shopper.id
             redirect_to shopper_welcome_path
         else
-            redirect_to new_shopper_path
+            render "new"
         end
 
     end

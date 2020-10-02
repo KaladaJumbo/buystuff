@@ -29,7 +29,7 @@ class CustomersController < ApplicationController
             session[:current_user] = @customer.id
             redirect_to welcome_path
         else
-            redirect_to new_customer_path
+            render "new"
         end
     end
 

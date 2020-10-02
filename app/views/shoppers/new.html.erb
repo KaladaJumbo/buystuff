@@ -1,8 +1,11 @@
 <h1 class = title><%= render partial: "shared/homeicon"%>Sign up as a shopper</h1>
 <div class = container-fluid id = new_form_s>
 
-    <p id = log_err_s><%=flash[:error]%><p>
-
+    <p id = log_err_s> 
+        <% @shopper.errors.full_messages.each do |e|%>
+            <p><%= e %></p>
+        <%end %>
+    </p>
     <div class = container-fluid id = "form_for_shopper_new">
         <%=form_for @shopper, class:"form_horizontal" do |f|%>
         <%=f.label :name%>
