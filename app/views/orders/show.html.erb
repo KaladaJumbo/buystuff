@@ -24,5 +24,10 @@
     <%if !@order.shopper%>
         <%=link_to("Add to Pickup List", shopper_pickup_path(@order), class: "btn", id: "Add_to_btn", method: "post" )%>
     <%end%>
+
+    <%if @order.status == "processed"%>
+        <%=link_to("drop off order", order_path(@order), method: "delete")%>
+    <%end%>
+
     <%=link_to("Back to Index", shopper_welcome_path, class: "btn", id: "to_index_btn")%>
 <div>

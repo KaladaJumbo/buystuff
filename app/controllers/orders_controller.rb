@@ -48,6 +48,9 @@ class OrdersController < ApplicationController
 
     def destroy
 
+        @order.destroy
+        redirect_to shopper_welcome_path
+
     end
 
     private 
