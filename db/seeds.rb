@@ -15,7 +15,7 @@ OrderItem.destroy_all
 
 rando_boi = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19]
 
-20.times do 
+50.times do 
 
     Item.create(description: Faker::Food.ingredient, weight: rando_boi.sample, price: rando_boi.sample)
 

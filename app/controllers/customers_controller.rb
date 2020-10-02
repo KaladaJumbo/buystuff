@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
     before_action :define_variable, only: [:show, :edit, :update, :destroy]
     before_action :restrict_access, only: [:show, :edit, :update, :destroy, :index]
 
+
     def index
 
         @customers = Customer.all
