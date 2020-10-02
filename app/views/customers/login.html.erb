@@ -8,13 +8,15 @@
         <p id = log_err_c><%=flash[:error]%><p>
         <div>
         <%=form_for :customer, url: "/login", :html => {:class => 'form_horizontal'} do |f|%>
-            <%=f.label :username%>
+            <%=f.label :username, class: "login_label_c"%>
             <%=f.text_field :username,  class: "form-control", placeholder: "Enter username"%>
-            <%=f.label :password%>
+            <%=f.label :password, class: "login_label_c"%>
             <%=f.password_field :password, class: "form-control", placeholder: "Enter password"%>
             <%=f.submit "login", class:"btn btn-default", id:"log_btn_c"%>
         <%end%>
         </div>
+    </div>
+    <div class = container-fluid id = not_customer>
         <em><%=link_to "new customer?", new_customer_path%></em>
         <em>if you are a shopper or want to volunteer please click <%=link_to "here", shopper_login_path%></em>
     </div>
