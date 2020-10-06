@@ -178,14 +178,21 @@ ul#home_links li a:hover {
    margin-top: 2.5%;
 }
 
+#new_customer_err{
+   color: red;
+}
+
 /*
 * Shopper_new CSS
 */
 
 #new_form_s{
-   margin-right: 45%;
-   margin-left: 20%;
-   margin-top: 3%;
+   width: 27%;
+   margin-top: 2.5%;
+}
+
+#log_err_s{
+   color: red;
 }
 
 /*

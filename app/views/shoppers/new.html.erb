@@ -1,24 +1,25 @@
 <h1 class = title><%= render partial: "shared/homeicon"%>Sign up as a shopper</h1>
 <div class = container-fluid id = new_form_s>
 
-    <p id = log_err_s> 
+    <div class = container-fluid id = log_err_s>
         <% @shopper.errors.full_messages.each do |e|%>
             <p><%= e %></p>
         <%end %>
-    </p>
+    </div>
     <div class = container-fluid id = "form_for_shopper_new">
         <%=form_for @shopper, class:"form_horizontal" do |f|%>
-        <%=f.label :name%>
+        <%=f.label :name, class: "login_label_c"%>
         <%=f.text_field :name, class: "form-control", placeholder: "Enter your name"%>
-        <%=f.label :address%>
+        <%=f.label :address, class: "login_label_c"%>
         <%=f.text_area :address, class: "form-control", placeholder: "Enter your address"%>
-        <%=f.label "max weight you can carry per order"%>
+        <%=f.label "max weight you can carry per order", class: "login_label_c"%>
         <%=f.number_field :max_weight, class: "form-control", placeholder: "max carry weight"%>
-        <%=f.label :username%>
+        <%=f.label :username, class: "login_label_c"%>
         <%=f.text_field :username, class: "form-control", placeholder: "Enter username"%>
-        <%=f.label :password%>
+        <%=f.label :password, class: "login_label_c"%>
         <%=f.password_field :password, class: "form-control", placeholder: "Enter password"%>
         <%=f.submit "submit registration", class:"btn btn-default", id:"log_btn_s"%>
+        <%end%>
     <div>
 </div>
-<%end%>
+
